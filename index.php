@@ -12,6 +12,24 @@
   <div class="header">
 	<?php include("head.php"); ?>
     <!-- end .header --></div>
+  <div class="header">
+	<table width="100%">
+		<tr align="center">
+			<td>
+				link1
+			</td>
+			<td>
+				link2
+			</td>
+			<td>
+				link3
+			</td>
+			<td>
+				link4
+			</td>
+		</tr>
+	</table>
+  </div>
   <div class="content">
     <h1>Bem-vindo</h1>
     <p>Esta página vai ser o layout base do &quot;projecto&quot;.</p>
