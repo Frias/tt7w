@@ -16,7 +16,7 @@
     <p>Esta página vai ser o layout base do &quot;projecto&quot;.</p>
     <!-- end .content --></div>
   <div class="footer">
-    <p>Apenas para aprender mais de PHP, SQL e CSS bem como as nornas XHTML 1.0</p>
+    <?php include("footer.php"); ?>
     <!-- end .footer --></div>
 <!-- end .container --></div>
 </body>
