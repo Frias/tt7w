@@ -9,7 +9,8 @@
 <body>
 
 <div class="container">
-  <div class="header"><a href="#"><img src="img/logo.jpg" alt="logo" name="logo" width="180" height="90" id="logo" style="background-color: #8090AB; display:block;" /></a> 
+  <div class="header">
+	<?php include("head.php"); ?>
     <!-- end .header --></div>
   <div class="content">
     <h1>Bem-vindo</h1>

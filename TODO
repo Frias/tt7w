@@ -4,7 +4,7 @@
 
  - Create a footer.php to import in all files. <done>
 
- - Create a head.php to import in all files.
+ - Create a head.php to import in all files. <done>
 
  - Create a menu.php to import in "all" files. If in all we could merge it in the head.php file later.
 
