@@ -1,5 +1,5 @@
  - Create the database (keep an updated dump file on the project folder):
-	- Users table
+	- Users table <done>
 	- More to come......
 
  - Create a footer.php to import in all files. <done>
@@ -8,6 +8,6 @@
 
  - Create a menu.php to import in "all" files. <done> If in all we could merge it in the head.php file later.
 
- - Create a db.php with the connection details to simplify.
+ - Create a db.php with the connection details to simplify. <done>
 
  - Create a functions.php to keep the custom functions used in the project. Maibe more than 1 file i can.
