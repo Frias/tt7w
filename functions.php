@@ -30,8 +30,9 @@ function random_string($type = 'alnum', $len = 8){
 }
 
 function checkUnique($table, $field, $compared){
-	$query = mysqli_query('SELECT  '.mysqli_real_escape_string($field).' FROM '.mysqli_real_escape_string($table).' WHERE "'.mysqli_real_escape_string($field).'" = "'.mysqli_real_escape_string($compared).'"');
-	if(mysqli_num_rows($query)==0){
+	$sql = "SELECT  '.$field.' FROM '.$table.' WHERE '.$field.'" = "'.$compared.";
+	$res = mysqli_query($cn,$sql);
+	if(mysqli_num_rows($res)==0){
 		return TRUE;
 	}
 	else {
