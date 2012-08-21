@@ -30,7 +30,7 @@ function random_string($type = 'alnum', $len = 8){
 }
 
 function checkUnique($table, $field, $compared){
-	$sql = "SELECT  '".$field."' FROM '".$table."' WHERE '".$field."' = '".$compared.'"";
+	$sql = "SELECT  '.$field.' FROM '.$table.' WHERE '.$field.' = '.$compared.'";
 	$res = mysqli_query($cn,$sql);
 	if(mysqli_num_rows($res)==0){
 		return TRUE;
