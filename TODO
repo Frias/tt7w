@@ -15,6 +15,10 @@
 
  - Create a register.php and confirm.php <done already>
 
- - Create a login.php and a file to import in every page that needs to check the login/session VERY IMPORTANT
+ - Create a login.php <done> and a file to import in every page that needs to check the login/session VERY IMPORTANT
 
  - Create a way to reset the password for members to use using the email as the secure resource.
+
+ - Modify the menu for non logged in pages.
+
+ - DEAL WITH THE WARNNINGS IN REGISTER.PHP.
