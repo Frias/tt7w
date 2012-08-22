@@ -6,8 +6,15 @@
 
  - Create a head.php to import in all files. <done>
 
- - Create a menu.php to import in "all" files. <done> If in all we could merge it in the head.php file later.
+ - Create a menu.php to import in "all" files. <done> If in all we could merge it in the head.php file later. //we cannot, some pages will not have both unless we don't show the head.php to non members.
 
  - Create a db.php with the connection details to simplify. <done>
 
- - Create a functions.php to keep the custom functions used in the project. Maibe more than 1 file i can.
+ - Create a functions.php to keep the custom functions used in the project. Maibe more than 1 file i can. <done and improving>
+	- I have to improve the checkUnique function, it is not using the correct syntaxe......
+
+ - Create a register.php and confirm.php <done already>
+
+ - Create a login.php and a file to import in every page that needs to check the login/session VERY IMPORTANT
+
+ - Create a way to reset the password for members to use using the email as the secure resource.
