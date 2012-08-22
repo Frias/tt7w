@@ -1,6 +1,6 @@
 <?php
-require_once('db.php');
-include('functions.php');
+require_once('includes/db.php');
+include('includes/functions.php');
 
 	if(isset($_POST['Login'])){
 		if($_POST['username']!='' && $_POST['password']!=''){
@@ -39,10 +39,10 @@ include('functions.php');
 
 <div class="container">
   <div class="header">
-	<?php include("head.php"); ?>
+	<?php include("includes/head.php"); ?>
     <!-- end .header --></div>
   <div class="header">
-	<?php include("menulo.php"); ?>
+	<?php include("includes/menulo.php"); ?>
   </div>
   <div class="content">
 	<?php if(isset($error)){ echo $error;}?>
@@ -55,7 +55,7 @@ include('functions.php');
     </table>
     <!-- end .content --></div>
   <div class="footer">
-    <?php include("footer.php"); ?>
+    <?php include("includes/footer.php"); ?>
     <!-- end .footer --></div>
 <!-- end .container --></div>
 </body>

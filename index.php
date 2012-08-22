@@ -10,17 +10,17 @@
 
 <div class="container">
   <div class="header">
-	<?php include("head.php"); ?>
+	<?php include("includes/head.php"); ?>
     <!-- end .header --></div>
   <div class="header">
-	<?php include("menu.php"); ?>
+	<?php include("includes/menu.php"); ?>
   </div>
   <div class="content">
     <h1>Bem-vindo</h1>
     <p>Esta página vai ser o layout base do &quot;projecto&quot;.</p>
     <!-- end .content --></div>
   <div class="footer">
-    <?php include("footer.php"); ?>
+    <?php include("includes/footer.php"); ?>
     <!-- end .footer --></div>
 <!-- end .container --></div>
 </body>

@@ -1,6 +1,6 @@
 <?php
-require('db.php');
-include('functions.php');
+require('includes/db.php');
+include('includes/functions.php');
 
 
 if(isset($_POST['register'])){
@@ -46,10 +46,10 @@ if(isset($_POST['register'])){
 
 <div class="container">
   <div class="header">
-	<?php include("head.php"); ?>
+	<?php include("includes/head.php"); ?>
     <!-- end .header --></div>
   <div class="header">
-	<?php include("menulo.php"); ?>
+	<?php include("includes/menulo.php"); ?>
   </div>
   <div class="content">
 	<?php if(isset($error)){ echo $error;}?>
@@ -66,7 +66,7 @@ if(isset($_POST['register'])){
 	<?php } ?>
     <!-- end .content --></div>
   <div class="footer">
-    <?php include("footer.php"); ?>
+    <?php include("includes/footer.php"); ?>
     <!-- end .footer --></div>
 <!-- end .container --></div>
 </body>

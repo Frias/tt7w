@@ -1,6 +1,6 @@
 <?php
-require_once('db.php');
-include('functions.php');
+require_once('includes/db.php');
+include('includes/functions.php');
 
 	if($_GET['ID']!='' && numeric($_GET['ID'])==TRUE && strlen($_GET['key'])==32 && alpha_numeric($_GET['key'])==TRUE){
 		$sql = "SELECT id, random_key, active FROM users WHERE id = '".$_GET['ID']."'";
@@ -44,10 +44,10 @@ include('functions.php');
 
 <div class="container">
   <div class="header">
-	<?php include("head.php"); ?>
+	<?php include("includes/head.php"); ?>
     <!-- end .header --></div>
   <div class="header">
-	<?php include("menulo.php"); ?>
+	<?php include("includes/menulo.php"); ?>
   </div>
   <div class="content">
 	<?php
@@ -60,7 +60,7 @@ include('functions.php');
 	?>
     <!-- end .content --></div>
   <div class="footer">
-    <?php include("footer.php"); ?>
+    <?php include("includes/footer.php"); ?>
     <!-- end .footer --></div>
 <!-- end .container --></div>
 </body>
