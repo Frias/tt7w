@@ -1,7 +1,7 @@
 <table width="100%">
 	<tr align="center">
 		<td>
-			link1
+			<a href="index.php">Início</a>
 		</td>
 		<td>
 			link2
@@ -10,7 +10,7 @@
 			link3
 		</td>
 		<td>
-			link4
+			<a href="logout.php">Sair</a>
 		</td>
 	</tr>
 </table>
