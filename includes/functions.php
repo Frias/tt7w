@@ -56,7 +56,7 @@ function checklogin($levels){
 	else {
 		$kt = split(' ', $levels);
 		include('db.php');
-		$sql = "SELECT level_access FROM users WHERE id = '".$_SESSION['user'])."'";
+		$sql = "SELECT level_access FROM users WHERE id = '".$_SESSION['user']."'";
 		$query = mysqli_query($cn, $sql);
 		$row = mysqli_fetch_assoc($query);
 		
