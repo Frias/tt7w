@@ -1,16 +1,16 @@
 <table width="100%">
 	<tr align="center">
-		<td>
-			link1
+		<td width="25%">
+			<a href="index.php">Início</a>
 		</td>
-		<td>
-			link2
+		<td width="25%">
+			<a href="login.php">Login</a>
 		</td>
-		<td>
-			link3
+		<td width="25%">
+			<a href="register.php">Registo</a>
 		</td>
-		<td>
-			link4
+		<td width="25%">
+			<a href="reset.php">Recuperar Password</a>
 		</td>
 	</tr>
 </table>
