@@ -10,6 +10,7 @@ include('includes/functions.php');
 			if(mysqli_num_rows($query) == 1){
 				$row = mysqli_fetch_assoc($query);
 				if($row['active'] == 1){
+					session_start();
 					$_SESSION['user'] = $row['id'];
 					$_SESSION['logged'] = TRUE;
 					header("Location: index.php");
