@@ -40,4 +40,12 @@ function checkUnique($table, $field, $compared){
 		return FALSE;
 	}
 }
+
+function numeric($str){
+	return ( ! ereg("^[0-9\.]+$", $str)) ? FALSE : TRUE;
+}
+
+function alpha_numeric($str){
+	return ( ! preg_match("/^([-a-z0-9])+$/i", $str)) ? FALSE : TRUE;
+}
 ?>
