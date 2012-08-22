@@ -48,4 +48,33 @@ function numeric($str){
 function alpha_numeric($str){
 	return ( ! preg_match("/^([-a-z0-9])+$/i", $str)) ? FALSE : TRUE;
 }
+
+function checklogin($levels){
+	if(!$_SESSION['logged']){
+		header("Location: login.php");
+	}
+	else {
+		$kt = split(' ', $levels);
+		include('db.php');
+		$sql = "SELECT level_access FROM users WHERE id = '".$_SESSION['user'])."'";
+		$query = mysqli_query($cn, $sql);
+		$row = mysqli_fetch_assoc($query);
+		
+		$access = FALSE;
+		
+		while(list($key,$val)=each($kt)){
+			if($val==$row['level_access']){//check if it matches the user levels
+				$access = TRUE;
+			}
+		}
+		if($access==FALSE)
+		{
+			header("Location: index.php");
+		}
+		else {
+		//do nothing
+		}
+	}
+}
+
 ?>
