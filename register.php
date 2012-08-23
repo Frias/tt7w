@@ -12,11 +12,11 @@ if(isset($_POST['register'])){
 			$getUser = mysqli_query($cn, $sql) or die(mysql_error());
 			if(mysqli_num_rows($getUser)==1) {//by this time it should be 1//
 				$row = mysqli_fetch_assoc($getUser);
-				$headers = 	'From: me@me.com' . "\r\n" .
-	    					'Reply-To: me@me.com' . "\r\n" .
-	    					'X-Mailer: PHP/' . phpversion();
+				$headers = 	"From: ".$smail."" . "\r\n" .
+	    					"Reply-To: ".$smail."" . "\r\n" .
+	    					"X-Mailer: PHP/" . phpversion();
 				$subject = "Email de confirmação";
-				$message = "Caro ".$row['username'].", este é o teu link de activação. http://www/confirm.php?ID=".$row['id']."&amp;key=".$row['random_key']." ";
+				$message = "Caro ".$row['username'].", este é o teu link de activação. ".$surl."/confirm.php?ID=".$row['id']."&key=".$row['random_key']." ";
 				if(mail($row['email'], $subject, $message, $headers)) {
 					$msg = 'Conta criada, verifica o e-mail';
 				}
