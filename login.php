@@ -4,7 +4,7 @@ include('includes/functions.php');
 
 	if(isset($_POST['Login'])){
 		if($_POST['username']!='' && $_POST['password']!=''){
-			$sql = "SELECT id, username, active FROM users WHERE username = '".$_POST['username']."' AND password = '".SHA1($_POST['password'])."'";
+			$sql = "SELECT id, username, active FROM users WHERE username = '".mysqli_real_escape_string($cn,$_POST['username'])."' AND password = '".SHA1(mysqli_real_escape_string($cn,$_POST['password']))."'";
 			$query = mysqli_query($cn, $sql);
 			
 			if(mysqli_num_rows($query) == 1){

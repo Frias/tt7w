@@ -37,7 +37,7 @@ function random_string($type = 'alnum', $len = 8){
 
 function checkUnique($table, $field, $compared){
 	include('db.php');
-	$sql = "SELECT  '.$field.' FROM '.$table.' WHERE '.$field.' = '.$compared.'";
+	$sql = "SELECT  '".mysqli_real_escape_string($cn,$field)."' FROM '".mysqli_real_escape_string($cn,$table)."' WHERE '".mysqli_real_escape_string($cn,$field)."' = '".mysqli_real_escape_string($cn,$compared)."'";
 	$res = mysqli_query($cn,$sql);
 	if(mysqli_num_rows($res)==0){
 		return TRUE;
@@ -62,7 +62,7 @@ function checklogin($levels){
 	else {
 		$kt = split(' ', $levels);
 		include('db.php');
-		$sql = "SELECT level_access FROM users WHERE id = '".$_SESSION['user']."'";
+		$sql = "SELECT level_access FROM users WHERE id = '".mysqli_real_escape_string($cn,$_SESSION['user'])."'";
 		$query = mysqli_query($cn, $sql);
 		$row = mysqli_fetch_assoc($query);
 		

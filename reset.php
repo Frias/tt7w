@@ -4,7 +4,7 @@ include('includes/functions.php');
 
 	if(isset($_POST['Submit'])){
 		if($_POST['email']!='' && valid_email($_POST['email'])==TRUE){
-			$sql = "SELECT id, username, temp_pass, email FROM users WHERE email = '".$_POST['email']."'";
+			$sql = "SELECT id, username, temp_pass, email FROM users WHERE email = '".mysqli_real_escape_string($cn,$_POST['email'])."'";
 			$getUser = mysqli_query($cn, $sql);
 			if(mysqli_num_rows($getUser)==1){
 	
