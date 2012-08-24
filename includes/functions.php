@@ -37,9 +37,9 @@ function random_string($type = 'alnum', $len = 8){
 
 function checkUnique($table, $field, $compared){
 	include('db.php');
-	$sql = "SELECT  '".mysqli_real_escape_string($cn,$field)."' FROM '".mysqli_real_escape_string($cn,$table)."' WHERE '".mysqli_real_escape_string($cn,$field)."' = '".mysqli_real_escape_string($cn,$compared)."'";
-	$res = mysqli_query($cn,$sql);
-	if(mysqli_num_rows($res)==0){
+	$sql = "SELECT  ".mysqli_real_escape_string($cn,$field)." FROM ".mysqli_real_escape_string($cn,$table)." WHERE ".mysqli_real_escape_string($cn,$field)." = '".mysqli_real_escape_string($cn,$compared)."'";
+	$res = mysqli_query($cn,$sql) or die(mysqli_error($cn));
+	if(mysqli_num_rows($res) == 0) {
 		return TRUE;
 	}
 	else {
