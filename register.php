@@ -7,9 +7,9 @@ if(isset($_POST['register'])){
 	if($_POST['username']!='' && $_POST['password']!='' && $_POST['password']==$_POST['password_confirmed'] && $_POST['email']!='' && valid_email($_POST['email']) == TRUE && checkUnique('users','username', $_POST['username']) == TRUE && checkUnique('users','email', $_POST['email']) == TRUE) {
 			$rand = random_string('alnum', 32);
 			$sql = "INSERT INTO users ( `username` , `password` , `email` , `random_key`) VALUES ('".mysqli_real_escape_string($cn,$_POST['username'])."', SHA1('".mysqli_real_escape_string($cn,$_POST['password'])."'), '".mysqli_real_escape_string($cn,$_POST['email'])."', '".random_string('alnum', 32)."')";
-			$query = mysqli_query($cn, $sql) or die(mysqli_error());
+			$query = mysqli_query($cn, $sql) or die(mysqli_error($cn));
 			$sql = "SELECT `id` , `username` , `email` , `random_key` FROM `users` WHERE `username` = '".mysqli_real_escape_string($cn,$_POST['username'])."'";
-			$getUser = mysqli_query($cn, $sql) or die(mysql_error());
+			$getUser = mysqli_query($cn, $sql) or die(mysqli_error($cn));
 			if(mysqli_num_rows($getUser)==1) {//by this time it should be 1//
 				$row = mysqli_fetch_assoc($getUser);
 				$headers = 	"From: ".$smail."" . "\r\n" .
