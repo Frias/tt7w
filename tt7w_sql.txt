@@ -1,6 +1,7 @@
 CREATE TABLE `users` (
   `id` int(11) NOT NULL auto_increment,
   `username` varchar(255) NOT NULL,
+  `regdate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `password` varchar(255) NOT NULL,
   `temp_pass` varchar(55) default NULL,
   `temp_pass_active` tinyint(1) NOT NULL default '0',
