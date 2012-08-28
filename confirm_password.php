@@ -36,7 +36,7 @@ include('includes/functions.php');
 	<?php include("includes/head.php"); ?>
     <!-- end .header --></div>
   <div class="header">
-	<?php include("includes/menu.php"); ?>
+	<?php include("includes/menulo.php"); ?>
   </div>
   <div class="content">
     <?php
