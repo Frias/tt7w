@@ -1,9 +1,9 @@
 <?php
-$sname = "tt7w";
+$sname = "Tugaland";
 
-$surl = "http://tt7w.tk";
+$surl = "http://tugaland.tk";
 
-$smail = "noreply@tt7w.tk";
+$smail = "noreply@tugaland.tk";
 
 function valid_email($str){
 	return ( ! preg_match("/^([a-z0-9\+_\-]+)(\.[a-z0-9\+_\-]+)*@([a-z0-9\-]+\.)+[a-z]{2,6}$/ix", $str)) ? FALSE : TRUE;
