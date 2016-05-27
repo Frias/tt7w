@@ -9,12 +9,12 @@ function valid_email($str){
 	return ( ! preg_match("/^([a-z0-9\+_\-]+)(\.[a-z0-9\+_\-]+)*@([a-z0-9\-]+\.)+[a-z]{2,6}$/ix", $str)) ? FALSE : TRUE;
 }
 
-function random_string($type = 'alnum', $len = 8){					
+function random_string($type = 'alnum', $len = 8){
 	switch($type){
 		case 'alnum'	:
 		case 'numeric'	:
 		case 'nozero'	:
-		
+
 				switch ($type){
 					case 'alnum'	:	$pool = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
 						break;
@@ -60,14 +60,14 @@ function checklogin($levels){
 		header("Location: login.php");
 	}
 	else {
-		$kt = split(' ', $levels);
+		$kt = explode(' ', $levels);
 		include('db.php');
 		$sql = "SELECT level_access FROM users WHERE id = '".mysqli_real_escape_string($cn,$_SESSION['user'])."'";
 		$query = mysqli_query($cn, $sql);
 		$row = mysqli_fetch_assoc($query);
-		
+
 		$access = FALSE;
-		
+
 		while(list($key,$val)=each($kt)){
 			if($val==$row['level_access']){//check if it matches the user levels
 				$access = TRUE;
