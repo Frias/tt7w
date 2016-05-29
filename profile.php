@@ -13,22 +13,27 @@
 			if($_POST['password2'] != '' && $_POST['password2'] == $_POST['password3']){
 				$sql = "UPDATE users set password = SHA1('".mysqli_real_escape_string($cn,$_POST['password2'])."') WHERE id = '".mysqli_real_escape_string($cn,$_SESSION['user'])."'";
 				$query = mysqli_query($cn, $sql);
-				$pass = "Password Alterada";
+				$pass = '<p>Password Alterada</P>';
 			}
 			else {
-				$pass = 'Password inalterada';
+				$pass = '<p>Password inalterada</P>';
 			}
 			if($_POST['email'] == $_POST['email2'] && $_POST['email'] != $row['email'] && valid_email($_POST['email']) == TRUE){
+				if(checkUnique('users','email', $_POST['email']) == TRUE){
 				$sql = "UPDATE users set email = '".mysqli_real_escape_string($cn,$_POST['email'])."' WHERE id = '".mysqli_real_escape_string($cn,$_SESSION['user'])."'";
 				$query = mysqli_query($cn, $sql);
-				$mail = "E-mail Alterado";
+				$mail = '<p>E-mail Alterado</P>';
+				}
+				else {
+					$mail = '<p>E-mail inalterado (Já presente na base de dados)</P>';
+				}
 			}
 			else {
-				$mail = 'E-mail inalterado';
+				$mail = '<p>E-mail inalterado</P>';
 			}
 		}
 		else {
-			$error = 'Password Actual Errada';
+			$error = '<p>Password Actual Errada</p>';
 		}
 	}
 ?>
