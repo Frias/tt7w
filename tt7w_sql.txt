@@ -13,3 +13,34 @@ CREATE TABLE `users` (
   UNIQUE KEY `username` (`username`),
   UNIQUE KEY `email` (`email`)
 )
+
+CREATE TABLE `conversations` (
+  `cid` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) NOT NULL,
+  `starter` int(11) NOT NULL,
+  PRIMARY KEY (`cid`),
+  KEY `starter_idxfk` (`starter`),
+  CONSTRAINT `conversations_ibfk_1` FOREIGN KEY (`starter`) REFERENCES `users` (`id`)
+)
+
+CREATE TABLE `participants` (
+  `cid` int(11) NOT NULL,
+  `uid` int(11) NOT NULL,
+  PRIMARY KEY (`cid`,`uid`),
+  KEY `uid_idxfk_1` (`uid`),
+  CONSTRAINT `participants_ibfk_1` FOREIGN KEY (`cid`) REFERENCES `conversations` (`cid`),
+  CONSTRAINT `participants_ibfk_2` FOREIGN KEY (`uid`) REFERENCES `users` (`id`)
+)
+
+CREATE TABLE `messages` (
+  `mid` int(11) NOT NULL AUTO_INCREMENT,
+  `cid` int(11) NOT NULL,
+  `uid` int(11) NOT NULL,
+  `message` varchar(255) NOT NULL,
+  `mdate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`mid`),
+  KEY `cid_idxfk` (`cid`),
+  KEY `uid_idxfk` (`uid`),
+  CONSTRAINT `messages_ibfk_1` FOREIGN KEY (`cid`) REFERENCES `conversations` (`cid`),
+  CONSTRAINT `messages_ibfk_2` FOREIGN KEY (`uid`) REFERENCES `users` (`id`)
+)
