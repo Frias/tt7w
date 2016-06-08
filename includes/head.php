@@ -1,8 +1,5 @@
-<table>
-	<tr width="100%">
-		<td width="180" align="center"><a href="#"><img src="img/logo.jpg" alt="logo" name="logo" width="180" height="90" id="logo" /></a>
-		</td>
-		<td width="100%" align="center"><h1><?php echo $sname; ?></h1>
-		</td>
-	</tr>
-</table>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title><?php echo $sname; ?></title>
+<link href="style.css" rel="stylesheet" type="text/css" />
+</head>
