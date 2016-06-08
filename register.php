@@ -33,10 +33,10 @@ if(isset($_POST['register'])){
 			$error = 'Algo de errado com o formulario ou o entao e-mail e/ou username já em uso.';
 		}
 	}
-?>
-	<?php include("includes/top.php"); ?>
-	<?php if(isset($error)){ echo $error;}?>
-	<?php if(isset($msg)){ echo $msg;} else { ?>
+
+include("includes/top.php");
+if(isset($error)){ echo $error;}
+if(isset($msg)){ echo $msg;} else { ?>
 	<table>
     <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
 		<tr><td>Username: </td><td><input type="text" id="username" name="username" size="32" value="<?php if(isset($_POST['username'])){echo $_POST['username'];}?>" /><br /></td></tr>
@@ -46,5 +46,5 @@ if(isset($_POST['register'])){
 		<tr><td><input type="reset" name="reset" value="Repor" /><br /></td><td><input type="submit" name="register" value="Registar" /><br /></td></tr>
 	</form>
 	</table>
-	<?php } ?>
-  <?php include("includes/bottom.php"); ?>
+	<?php }
+	include("includes/bottom.php"); ?>

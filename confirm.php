@@ -31,14 +31,14 @@ include('includes/functions.php');
 		$error = 'Não sei o que estás a fazer !';
 
 	}
-?>
-	<?php include("includes/top.php"); ?>
-	<?php
+
+include("includes/top.php");
+
 	if(isset($error)){
 		echo $error;
 	}
 	else {
 		echo $msg;
 	}
-	?>
-<?php include("includes/bottom.php"); ?>
+
+include("includes/bottom.php"); ?>

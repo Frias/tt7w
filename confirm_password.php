@@ -20,9 +20,8 @@ include('includes/functions.php');
 	else {
 		$error = 'Estás a tentar confirmar uma passord de um membro que não existe.';
 	}
-?>
-	<?php include("includes/top.php"); ?>
-    <?php
+include("includes/top.php");
+
 	if(isset($error))
 	{
 		echo $error;
@@ -30,5 +29,6 @@ include('includes/functions.php');
 	else {
 		echo $msg;
 	}
-    ?>
-    <?php include("includes/bottom.php"); ?>
+
+include("includes/bottom.php");
+?>

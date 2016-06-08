@@ -27,9 +27,9 @@ include('includes/functions.php');
 			$error = 'Usa ambos, username e password, para aceder';
 		}
 	}
-?>
-	<?php include("includes/top.php"); ?>
-	<?php if(isset($error)){ echo $error;}?>
+
+include("includes/top.php");
+if(isset($error)){ echo $error;}?>
     <table>
     	<form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
 			<tr><td>Username:</td><td><input type="text" id="username" name="username" size="32" value="" /></td></tr>

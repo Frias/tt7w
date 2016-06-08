@@ -9,8 +9,9 @@
   $username = $row['username'];
   $regdate = $row['regdate'];
   $email = $row['email'];
-?>
-	<?php include("includes/top.php"); ?>
+
+include("includes/top.php"); ?>
+
     <table width="100%">
     	<tr align="center">
     		<td colspan="2">

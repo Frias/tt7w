@@ -35,9 +35,9 @@ include('includes/functions.php');
 			$error = 'E-mail inválido !';
 		}
 	}
-?>
-	<?php include("includes/top.php"); ?>
-	<?php if(isset($error)){
+
+include("includes/top.php");
+if(isset($error)){
 		echo $error;
 		}
 		if(isset($msg)){
@@ -51,5 +51,5 @@ include('includes/functions.php');
 			<tr><td><input type="reset" name="Reset" value="Repor" /></td><td><input type="submit" name="Submit" value="Submeter" /></td></tr>
 		</form>
     </table>
-	<?php } ?>
-<?php include("includes/bottom.php"); ?>
+	<?php }
+	include("includes/bottom.php"); ?>

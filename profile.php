@@ -36,10 +36,10 @@
 			$error = '<p>Password Actual Errada</p>';
 		}
 	}
-?>
-	<?php include("includes/top.php"); ?>
-		<?php if(isset($error)){ echo $error;}?>
-		<?php if(isset($pass) or isset($mail)){
+
+include("includes/top.php");
+if(isset($error)){ echo $error;}
+if(isset($pass) or isset($mail)){
 			echo $pass;
 			echo $mail;
 		}
@@ -56,5 +56,5 @@
         <tr><td align="right"><input type="reset" name="Repor" value="Repor" /></td><td><input type="submit" name="Alterar" value="Alterar" /></td></tr>
           </form>
     </table>
-		<?php } ?>
-<?php include("includes/bottom.php"); ?>
+<?php }
+include("includes/bottom.php"); ?>
