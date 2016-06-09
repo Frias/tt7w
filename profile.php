@@ -36,27 +36,10 @@
 			$error = '<p>Password Actual Errada</p>';
 		}
 	}
-?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title><?php echo $sname; ?></title>
-<link href="style.css" rel="stylesheet" type="text/css" />
-</head>
 
-<body>
-
-<div class="container">
-  <div class="header">
-	<?php include("includes/head.php"); ?>
-    <!-- end .header --></div>
-  <div class="header">
-	<?php include("includes/menu.php"); ?>
-  </div>
-  <div class="content">
-		<?php if(isset($error)){ echo $error;}?>
-		<?php if(isset($pass) or isset($mail)){
+include("includes/top.php");
+if(isset($error)){ echo $error;}
+if(isset($pass) or isset($mail)){
 			echo $pass;
 			echo $mail;
 		}
@@ -73,11 +56,5 @@
         <tr><td align="right"><input type="reset" name="Repor" value="Repor" /></td><td><input type="submit" name="Alterar" value="Alterar" /></td></tr>
           </form>
     </table>
-		<?php } ?>
-    <!-- end .content --></div>
-  <div class="footer">
-    <?php include("includes/footer.php"); ?>
-    <!-- end .footer --></div>
-<!-- end .container --></div>
-</body>
-</html>
+<?php }
+include("includes/bottom.php"); ?>
