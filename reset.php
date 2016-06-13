@@ -1,6 +1,7 @@
 <?php
 require_once('includes/db.php');
 include('includes/functions.php');
+include('includes/lang/pt-pt.php');
 
 	if(isset($_POST['Submit'])){
 		if($_POST['email']!='' && valid_email($_POST['email'])==TRUE){
@@ -21,18 +22,18 @@ include('includes/functions.php');
 
 
 				if(mail($row['email'], $subject, $message, $headers)){
-					$msg = 'Password enviada, verifica o e-mail para mais informações';
+					$msg = $lrecovered;
 				}
 				else {
-					$error = 'Não enviei o e-mail';
+					$error = $lnomail;
 				}
 			}
 			else {
-				$error = 'Não existe nenhum membro com esse e-mail.';
+				$error = $lnomailx;
 			}
 		}
 		else {
-			$error = 'E-mail inválido !';
+			$error = $linvalmail;
 		}
 	}
 
@@ -47,8 +48,8 @@ if(isset($error)){
 		?>
     <table>
     	<form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
-			<tr><td>E-mail:</td><td><input type="text" id="email" name="email" size="32" value="" /></td></tr>
-			<tr><td><input type="reset" name="Reset" value="Repor" /></td><td><input type="submit" name="Submit" value="Submeter" /></td></tr>
+			<tr><td><?php echo $lmail; ?></td><td><input type="text" id="email" name="email" size="32" value="" /></td></tr>
+			<tr><td><input type="reset" name="Reset" value="<?php echo $lreset; ?>" /></td><td><input type="submit" name="Submit" value="<?php echo $lsubmit; ?>" /></td></tr>
 		</form>
     </table>
 	<?php }

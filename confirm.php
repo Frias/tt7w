@@ -1,6 +1,7 @@
 <?php
 require_once('includes/db.php');
 include('includes/functions.php');
+include('includes/lang/pt-pt.php');
 
 	if($_GET['ID']!='' && numeric($_GET['ID'])==TRUE && strlen($_GET['key'])==32 && alpha_numeric($_GET['key'])==TRUE){
 		$sql = "SELECT id, random_key, active FROM users WHERE id = '".mysqli_real_escape_string($cn,$_GET['ID'])."'";
@@ -8,27 +9,27 @@ include('includes/functions.php');
 		if(mysqli_num_rows($query)==1){
 			$row = mysqli_fetch_assoc($query);
 			if($row['active']==1){
-				$error = 'Este membro já tem a conta activa !';
+				$error = $laccalreadyactive;
 			}
 			elseif($row['random_key']!=$_GET['key']){
-				$error = 'A chave de confirmação não é valida para este membro !';
+				$error = $linvalidkey;
 			}
 			else{
 				$sql = "UPDATE users SET active=1 WHERE id='".$row['id']."'";
 				$update = mysqli_query($cn, $sql) or die(mysqli_error());
-				$msg = 'Sucesso, conta confirmada !';
+				$msg = $laccconfirmed;
 			}
 		}
 		else {
 
-			$error = 'Utilizador inexistente !';
+			$error = $luserdontexist;
 
 		}
 
 	}
 	else {
 
-		$error = 'Não sei o que estás a fazer !';
+		$error = $ldunnowhatyoudoin;
 
 	}
 

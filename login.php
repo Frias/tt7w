@@ -1,6 +1,7 @@
 <?php
 require_once('includes/db.php');
 include('includes/functions.php');
+include('includes/lang/pt-pt.php');
 
 	if(isset($_POST['Login'])){
 		if($_POST['username']!='' && $_POST['password']!=''){
@@ -16,15 +17,15 @@ include('includes/functions.php');
 					header("Location: index.php");
 				}
 				else {
-					$error = 'Membro não ativo';
+					$error = $linactivemember;
 				}
 			}
 			else {
-				$error = 'Login falhou !';
+				$error = $lloginfailled;
 			}
 		}
 		else {
-			$error = 'Usa ambos, username e password, para aceder';
+			$error = $lbothuserpass;
 		}
 	}
 
@@ -32,9 +33,9 @@ include("includes/top.php");
 if(isset($error)){ echo $error;}?>
     <table>
     	<form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
-			<tr><td>Username:</td><td><input type="text" id="username" name="username" size="32" value="" /></td></tr>
-			<tr><td>Password:</td><td><input type="password" id="password" name="password" size="32" value="" /></td></tr>
-			<tr><td><input type="reset" name="Repor" value="Repor" /></td><td><input type="submit" name="Login" value="Login" /></td></tr>
+			<tr><td><?php echo $lusername; ?></td><td><input type="text" id="username" name="username" size="32" value="" /></td></tr>
+			<tr><td><?php echo $lpassword; ?></td><td><input type="password" id="password" name="password" size="32" value="" /></td></tr>
+			<tr><td><input type="reset" name="Repor" value="<?php echo $lreset; ?>" /></td><td><input type="submit" name="Login" value="<?php echo $llogin; ?>" /></td></tr>
 		</form>
     </table>
 <?php include("includes/bottom.php"); ?>
