@@ -1,7 +1,7 @@
 <?php
 require_once('includes/db.php');
 include('includes/functions.php');
-include('includes/lang/pt-pt.php');
+include('includes/config.php');
 
 	$sql = "SELECT * FROM users WHERE id = '".mysqli_real_escape_string($cn,$_GET['ID'])."'";
 	$query = mysqli_query($cn, $sql);

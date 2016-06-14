@@ -1,7 +1,7 @@
 <?php
 require('includes/db.php');
 include('includes/functions.php');
-include('includes/lang/pt-pt.php');
+include('includes/config.php');
 
 if(isset($_POST['register'])){
 	if($_POST['username']!='' && $_POST['password']!='' && $_POST['password']==$_POST['password_confirmed'] && $_POST['email']!='' && valid_email($_POST['email']) == TRUE && checkUnique('users','username', $_POST['username']) == TRUE && checkUnique('users','email', $_POST['email']) == TRUE) {

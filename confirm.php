@@ -1,7 +1,7 @@
 <?php
 require_once('includes/db.php');
 include('includes/functions.php');
-include('includes/lang/pt-pt.php');
+include('includes/config.php');
 
 	if($_GET['ID']!='' && numeric($_GET['ID'])==TRUE && strlen($_GET['key'])==32 && alpha_numeric($_GET['key'])==TRUE){
 		$sql = "SELECT id, random_key, active FROM users WHERE id = '".mysqli_real_escape_string($cn,$_GET['ID'])."'";

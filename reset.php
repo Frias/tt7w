@@ -1,7 +1,7 @@
 <?php
 require_once('includes/db.php');
 include('includes/functions.php');
-include('includes/lang/pt-pt.php');
+include('includes/config.php');
 
 	if(isset($_POST['Submit'])){
 		if($_POST['email']!='' && valid_email($_POST['email'])==TRUE){

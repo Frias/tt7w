@@ -1,7 +1,7 @@
 <?php
 	include('includes/db.php');
 	include('includes/functions.php');
-	include('includes/lang/pt-pt.php');
+	include('includes/config.php');
 	session_start();
 	checkLogin('1 2');
   $sql = "SELECT * FROM users WHERE id = '".mysqli_real_escape_string($cn,$_SESSION['user'])."'";

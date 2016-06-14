@@ -1,7 +1,7 @@
 <?php
 require_once('includes/db.php');
 include('includes/functions.php');
-include('includes/lang/pt-pt.php');
+include('includes/config.php');
 
 	if(isset($_POST['Login'])){
 		if($_POST['username']!='' && $_POST['password']!=''){
