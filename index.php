@@ -1,10 +1,7 @@
 <?php
 include('includes/db.php');
 include('includes/functions.php');
-
-session_start();
-checkLogin('1 2');
-
+include('includes/checksession.php');
 include('includes/config.php');
 
 include("includes/top.php"); ?>
