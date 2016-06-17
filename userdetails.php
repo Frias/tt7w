@@ -1,15 +1,14 @@
 <?php
 	include('includes/db.php');
 	include('includes/functions.php');
-	include('includes/config.php');
+
 	session_start();
 	checkLogin('1 2');
+
+	include('includes/config.php');
   $sql = "SELECT username, regdate, email, active FROM users WHERE id = '".mysqli_real_escape_string($cn,$_GET['id'])."'";
   $query = mysqli_query($cn, $sql);
   $row = mysqli_fetch_assoc($query);
-  $username = $row['username'];
-  $regdate = $row['regdate'];
-  $email = $row['email'];
 
 include("includes/top.php"); ?>
 

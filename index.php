@@ -1,9 +1,11 @@
 <?php
 include('includes/db.php');
 include('includes/functions.php');
-include('includes/config.php');
+
 session_start();
 checkLogin('1 2');
+
+include('includes/config.php');
 
 include("includes/top.php"); ?>
     <h1>Bem-vindo</h1>
