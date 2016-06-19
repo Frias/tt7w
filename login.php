@@ -28,7 +28,7 @@ if(isset($_POST['Login'])){
 		$error = $lbothuserpass;
 	}
 }
-$pname = $login;
+$pname = $llogin;
 include("includes/top.php");
 if(isset($error)){ echo $error;}?>
 <table>

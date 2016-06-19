@@ -32,7 +32,7 @@ if(isset($_POST['register'])){
 		$error = $lsomethingwrong;
 	}
 }
-$pname = $register;
+$pname = $lregister;
 include("includes/top.php");
 if(isset($error)){ echo $error;}
 if(isset($msg)){ echo $msg;} else { ?>

@@ -53,10 +53,7 @@ $lsubmit = "Submeter";
 //pname
 $confirm_password = "Confirmar Password";
 $confirm = "Confirmar conta";
-$index = "Início";
-$login = "Entrar";
 $profile = "Perfil";
-$register = "Registar";
 $reset = "Recuperar Password";
 $userdetails = "Detalhes de";
 ?>
