@@ -1,6 +1,11 @@
  - Create the database (keep an updated dump file on the project folder):
 	- Users table <done>
-	- More to come......
+	- Languages <done>
+  - Styles <done>
+  - Countries. And populate the table.
+  - Conversations
+  - Participants
+  - Messages
 
  - Create a footer.php to import in all files. <done>
 
@@ -11,7 +16,7 @@
  - Create a db.php with the connection details to simplify. <done>
 
  - Create a functions.php to keep the custom functions used in the project. Maibe more than 1 file i can. <done and improving>
-	- I have to improve the checkUnique function, it is not using the correct syntaxe......
+	- I have to improve the checkUnique function, it is not using the correct syntaxe <done>
 
  - Create a register.php and confirm.php <done already>
 
@@ -21,6 +26,12 @@
 
  - Modify the menu for non logged in pages. <done>
 
- - DEAL WITH THE WARNNINGS IN REGISTER.PHP.
+ - DEAL WITH THE WARNNINGS IN REGISTER.PHP. <done>
+
+ - Create the template system for styles and languages  <done>
+
+ - Create a private messaging system.
+
+ - Create a message board system (forum).
 
  - Create some pages......
