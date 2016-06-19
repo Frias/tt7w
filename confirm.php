@@ -32,7 +32,7 @@ include('includes/config.php');
 		$error = $ldunnowhatyoudoin;
 
 	}
-
+$pname = $confirm;
 include("includes/top.php");
 
 	if(isset($error)){

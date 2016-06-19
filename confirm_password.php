@@ -21,6 +21,7 @@ include('includes/config.php');
 	else {
 		$error = $lpassmemberdontexist;
 	}
+$pname = $confirm_password;
 include("includes/top.php");
 
 	if(isset($error))

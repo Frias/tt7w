@@ -28,7 +28,7 @@ include('includes/config.php');
 			$error = $lbothuserpass;
 		}
 	}
-
+$pname = $login;
 include("includes/top.php");
 if(isset($error)){ echo $error;}?>
     <table>

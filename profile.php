@@ -36,7 +36,7 @@
 			$error = $lpasswrong;
 		}
 	}
-
+$pname = $profile;
 include("includes/top.php");
 if(isset($error)){ echo $error;}
 if(isset($pass) or isset($mail)){

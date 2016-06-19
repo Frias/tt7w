@@ -6,7 +6,7 @@
   $sql = "SELECT username, regdate, email, active FROM users WHERE id = '".mysqli_real_escape_string($cn,$_GET['id'])."'";
   $query = mysqli_query($cn, $sql);
   $row = mysqli_fetch_assoc($query);
-
+$pname = $userdetails." ".$row['username'];
 include("includes/top.php"); ?>
     <table width="100%">
     	<tr align="center">

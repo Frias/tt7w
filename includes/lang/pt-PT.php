@@ -50,4 +50,13 @@ $lnomail = "Não enviei o e-mail";
 $lnomailx = "Não existe nenhum membro com esse e-mail.";
 $linvalmail = "E-mail inválido !";
 $lsubmit = "Submeter";
+//pname
+$confirm_password = "Confirmar Password";
+$confirm = "Confirmar conta";
+$index = "Início";
+$login = "Entrar";
+$profile = "Perfil";
+$register = "Registar";
+$reset = "Recuperar Password";
+$userdetails = "Detalhes de";
 ?>

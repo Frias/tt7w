@@ -36,7 +36,7 @@ include('includes/config.php');
 			$error = $linvalmail;
 		}
 	}
-
+$pname = $reset;
 include("includes/top.php");
 if(isset($error)){
 		echo $error;
