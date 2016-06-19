@@ -22,7 +22,7 @@ $row = mysqli_fetch_assoc($query);
 			<a href="index.php"><?php echo $lhome; ?></a>
 		</td>
 		<td>
-			link2
+			<a href="profile.php"><?php echo $profile; ?></a>
 		</td>
 		<td>
 			link3
