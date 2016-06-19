@@ -8,6 +8,7 @@ CREATE TABLE `users` (
   `email` varchar(255) NOT NULL,
   `active` int(11) NOT NULL DEFAULT '0',
   `level_access` int(11) NOT NULL DEFAULT '2',
+  `country` varchar(2) NOT NULL DEFAULT 'PT',
   `style` varchar(20) NOT NULL DEFAULT 'default',
   `lang` varchar(5) NOT NULL DEFAULT 'pt-PT',
   `random_key` varchar(32) DEFAULT NULL,
@@ -16,8 +17,10 @@ CREATE TABLE `users` (
   UNIQUE KEY `email` (`email`),
   KEY `users_ibfk_1_idx` (`style`),
   KEY `users_ibfk_2_idx` (`lang`),
+  KEY `users_ibfk_3_idx` (`country`),
   CONSTRAINT `users_ibfk_1` FOREIGN KEY (`style`) REFERENCES `styles` (`sname`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `users_ibfk_2` FOREIGN KEY (`lang`) REFERENCES `langs` (`lid`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  CONSTRAINT `users_ibfk_2` FOREIGN KEY (`lang`) REFERENCES `langs` (`lid`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `users_ibfk_3` FOREIGN KEY (`country`) REFERENCES `countries` (`ccode`) ON DELETE NO ACTION ON UPDATE NO ACTION
 )
 
 CREATE TABLE `langs` (
@@ -26,6 +29,13 @@ CREATE TABLE `langs` (
   PRIMARY KEY (`lid`),
   UNIQUE KEY `lid_UNIQUE` (`lid`),
   UNIQUE KEY `file_UNIQUE` (`lfile`)
+)
+
+CREATE TABLE `styles` (
+  `sname` varchar(20) NOT NULL,
+  `sfile` varchar(20) NOT NULL,
+  PRIMARY KEY (`sname`),
+  UNIQUE KEY `file_UNIQUE` (`sfile`)
 )
 
 CREATE TABLE `styles` (

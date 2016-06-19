@@ -1,8 +1,3 @@
-<?php
-$sql = "SELECT * FROM users WHERE id = '".mysqli_real_escape_string($cn,$_SESSION['user'])."'";
-$query = mysqli_query($cn, $sql);
-$row = mysqli_fetch_assoc($query);
-?>
 <table width="100%">
 	<tr>
 		<td align="left">
