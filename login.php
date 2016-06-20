@@ -14,6 +14,10 @@ if(isset($_POST['Login'])){
 				session_start();
 				$_SESSION['user'] = $row['id'];
 				$_SESSION['logged'] = TRUE;
+				$rand = random_string('alnum', 32);
+				$_SESSION['token'] = $rand;
+				$sql = "INSERT INTO `sessions` ( `user` , `token` , `sactive`) VALUES ('".mysqli_real_escape_string($cn,$row['id'])."', '".mysqli_real_escape_string($cn,$rand)."', 1)";
+				$query = mysqli_query($cn, $sql);
 				header("Location: index.php");
 			}
 			else {

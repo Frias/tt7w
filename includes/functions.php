@@ -55,8 +55,24 @@ function alpha_numeric($str){
 	return ( ! preg_match("/^([-a-z0-9])+$/i", $str)) ? FALSE : TRUE;
 }
 
+function checkSession(){
+	include('db.php');
+	$sql = "SELECT `user`, `token`, `sactive` FROM `sessions` WHERE `user` = '".mysqli_real_escape_string($cn,$_SESSION['user'])."' AND `token` = '".mysqli_real_escape_string($cn,$_SESSION['token'])."' AND `sactive` = 1";
+	$query = mysqli_query($cn, $sql);
+	$session = FALSE;
+	if(mysqli_num_rows($query) == 1){
+		return TRUE;
+	}
+	else{
+		return FALSE;
+	}
+}
+
 function checklogin($levels){
 	if(!$_SESSION['logged']){
+		header("Location: login.php");
+	}
+	elseif(checkSession() == FALSE){
 		header("Location: login.php");
 	}
 	else {
