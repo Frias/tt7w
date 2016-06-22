@@ -50,6 +50,15 @@ else { ?>
     <tr><td align="right"><?php echo $lmembersince; ?></td><td align="left"><?php echo $row['regdate']; ?></td></tr>
     <tr><td align="right"><?php echo $lmail; ?></td><td align="left"><input type="text" id="email" name="email" size="32" value="<?php echo $row['email']; ?>" /></td></tr>
 		<tr><td align="right"><?php echo $lconfnewmail; ?></td><td align="left"><input type="text" id="email2" name="email2" size="32" value="<?php echo $row['email']; ?>" /></td></tr>
+		<tr><td align="right">País</td><td align="left"><select name="country">
+			<?php
+			$sql = "SELECT * FROM countries";
+			$query = mysqli_query($cn, $sql);
+			while ($colum = mysqli_fetch_array($query)) {
+    		echo "<option value='" . $colum['ccode'] ."'>" . $colum['cname'] ."</option>";
+			}
+			?>
+		</select></td></tr>
 		<tr><td align="right"><?php echo $lnewpass; ?></td><td align="left"><input type="password" id="password2" name="password2" size="32" value="" /></td></tr>
 		<tr><td align="right"><?php echo $lconfnewpass; ?></td><td align="left"><input type="password" id="password3" name="password3" size="32" value="" /></td></tr>
     <tr><td align="right"><?php echo $lactualpass; ?></td><td align="left"><input type="password" id="password" name="password" size="32" value="" /></td><tr>
