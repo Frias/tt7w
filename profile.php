@@ -8,6 +8,14 @@ $query = mysqli_query($cn, $sql);
 $row = mysqli_fetch_assoc($query);
 
 if(isset($_POST['Alterar'])){
+	if(isset($_POST['country']) or isset($_POST['lang']) or isset($_POST['style'])){
+		$sql = "UPDATE users set country = '".mysqli_real_escape_string($cn,$_POST['country'])."' AND lang = '".mysqli_real_escape_string($cn,$_POST['lang'])."' AND style = '".mysqli_real_escape_string($cn,$_POST['style'])."' WHERE id = '".mysqli_real_escape_string($cn,$_SESSION['user'])."'";
+		$query = mysqli_query($cn, $sql);
+		$config = "updated";
+	}
+	else {
+		$config = "non updated";
+	}
 	if(sha1($_POST['password']) == $row['password']){
 
 		if($_POST['password2'] != '' && $_POST['password2'] == $_POST['password3']){
@@ -43,14 +51,15 @@ if(isset($pass) or isset($mail)){
 	echo '<p>'.$pass.'</p>';
 	echo '<p>'.$mail.'</p>';
 }
+if(isset($config)){
+	echo '<p>'.$config.'</p>';
+}
 else { ?>
 <table width="100%">
 	<tr align="center"><td colspan="2"><?php echo $row['username']; ?> <?php echo $row['active']; ?></td></tr>
   <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
     <tr><td align="right"><?php echo $lmembersince; ?></td><td align="left"><?php echo $row['regdate']; ?></td></tr>
-    <tr><td align="right"><?php echo $lmail; ?></td><td align="left"><input type="text" id="email" name="email" size="32" value="<?php echo $row['email']; ?>" /></td></tr>
-		<tr><td align="right"><?php echo $lconfnewmail; ?></td><td align="left"><input type="text" id="email2" name="email2" size="32" value="<?php echo $row['email']; ?>" /></td></tr>
-		<tr><td align="right">País</td><td align="left"><select name="country">
+		<tr><td align="right"><?php echo $lcountry; ?></td><td align="left"><select name="country">
 			<?php
 			$sql = "SELECT * FROM countries";
 			$query = mysqli_query($cn, $sql);
@@ -59,6 +68,26 @@ else { ?>
 			}
 			?>
 		</select></td></tr>
+		<tr><td align="right"><?php echo $llang; ?></td><td align="left"><select name="lang">
+			<?php
+			$sql = "SELECT * FROM langs";
+			$query = mysqli_query($cn, $sql);
+			while ($colum = mysqli_fetch_array($query)) {
+    		echo "<option value='" . $colum['lid'] ."'>" . $colum['lname'] ."</option>";
+			}
+			?>
+		</select></td></tr>
+		<tr><td align="right"><?php echo $lstyle; ?></td><td align="left"><select name="style">
+			<?php
+			$sql = "SELECT * FROM styles";
+			$query = mysqli_query($cn, $sql);
+			while ($colum = mysqli_fetch_array($query)) {
+    		echo "<option value='" . $colum['sid'] ."'>" . $colum['sname'] ."</option>";
+			}
+			?>
+		</select></td></tr>
+    <tr><td align="right"><?php echo $lmail; ?></td><td align="left"><input type="text" id="email" name="email" size="32" value="<?php echo $row['email']; ?>" /></td></tr>
+		<tr><td align="right"><?php echo $lconfnewmail; ?></td><td align="left"><input type="text" id="email2" name="email2" size="32" value="<?php echo $row['email']; ?>" /></td></tr>
 		<tr><td align="right"><?php echo $lnewpass; ?></td><td align="left"><input type="password" id="password2" name="password2" size="32" value="" /></td></tr>
 		<tr><td align="right"><?php echo $lconfnewpass; ?></td><td align="left"><input type="password" id="password3" name="password3" size="32" value="" /></td></tr>
     <tr><td align="right"><?php echo $lactualpass; ?></td><td align="left"><input type="password" id="password" name="password" size="32" value="" /></td><tr>
