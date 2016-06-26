@@ -59,4 +59,5 @@ $confirm = "Confirmar conta";
 $profile = "Perfil";
 $reset = "Recuperar Password";
 $userdetails = "Detalhes de";
+$lsessions = "Sessões";
 ?>
