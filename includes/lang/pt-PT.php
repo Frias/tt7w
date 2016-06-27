@@ -60,4 +60,8 @@ $profile = "Perfil";
 $reset = "Recuperar Password";
 $userdetails = "Detalhes de";
 $lsessions = "Sessões";
+//sessions
+$lsid = "ID da sessão";
+$lsdate = "Data de Criação";
+$lsip = "IP";
 ?>

@@ -10,9 +10,9 @@ $query = mysqli_query($cn, $sql);
 ?>
 <table width="100%">
   <tr align="center">
-    <td>ID da sessão</td>
-    <td>Data de Criação</td>
-    <td>IP</td>
+    <td><?php echo $lsid; ?></td>
+    <td><?php echo $lsdate; ?></td>
+    <td><?php echo $lsip; ?></td>
   </tr>
 <?php while ($colum = mysqli_fetch_array($query)) { ?>
   <tr align="center">
