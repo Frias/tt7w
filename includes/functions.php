@@ -57,7 +57,7 @@ function alpha_numeric($str){
 
 function checkSession(){
 	include('db.php');
-	$sql = "SELECT `user`, `token`, `sactive` FROM `sessions` WHERE `user` = '".mysqli_real_escape_string($cn,$_SESSION['user'])."' AND `token` = '".mysqli_real_escape_string($cn,$_SESSION['token'])."' AND `sactive` = 1";
+	$sql = "SELECT `user`, `token`, `sactive` FROM `sessions` WHERE `user` = '".mysqli_real_escape_string($cn,$_SESSION['user'])."' AND `token` = '".mysqli_real_escape_string($cn,$_SESSION['token'])."' AND `ip` = '".mysqli_real_escape_string($cn,$_SERVER['REMOTE_ADDR'])."' AND `sactive` = 1";
 	$query = mysqli_query($cn, $sql);
 	$session = FALSE;
 	if(mysqli_num_rows($query) == 1){
