@@ -3,12 +3,12 @@ include('includes/db.php');
 include('includes/functions.php');
 include('includes/checksession.php');
 include('includes/config.php');
-
+$pname = $userdetails." ".$row['username'];
 include("includes/top.php"); ?>
 <table width="100%">
   <tr align="center">
     <td colspan="2">
-    	<p><?php echo $row['username']; ?> <?php echo $row['active']; ?> <img src="includes/icons/flags/<?php echo $row['cflag']; ?>" alt="country" name="<?php echo $row['cname']; ?>" width="32" height="20" id="logo" /><p>
+    	<p><?php echo $row['username']; ?> <?php echo $row['active']; ?> <img src="includes/icons/flags/<?php echo $row['cflag']; ?>" alt="country" name="<?php echo $row['cname']; ?>" width="16" height="10"><p>
     </td>
   </tr>
   <tr>

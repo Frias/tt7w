@@ -1,3 +1,25 @@
+CREATE TABLE `langs` (
+  `lid` varchar(5) NOT NULL,
+  `lfile` varchar(20) NOT NULL,
+  PRIMARY KEY (`lid`),
+  UNIQUE KEY `lid_UNIQUE` (`lid`),
+  UNIQUE KEY `file_UNIQUE` (`lfile`)
+)
+
+CREATE TABLE `countries` (
+  `ccode` varchar(2) NOT NULL,
+  `cname` varchar(20) NOT NULL,
+  PRIMARY KEY (`ccode`),
+  UNIQUE KEY `file_UNIQUE` (`cname`)
+)
+
+CREATE TABLE `styles` (
+  `sname` varchar(20) NOT NULL,
+  `sfile` varchar(20) NOT NULL,
+  PRIMARY KEY (`sname`),
+  UNIQUE KEY `file_UNIQUE` (`sfile`)
+)
+
 CREATE TABLE `users` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `username` varchar(255) NOT NULL,
@@ -21,28 +43,6 @@ CREATE TABLE `users` (
   CONSTRAINT `users_ibfk_1` FOREIGN KEY (`style`) REFERENCES `styles` (`sname`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `users_ibfk_2` FOREIGN KEY (`lang`) REFERENCES `langs` (`lid`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `users_ibfk_3` FOREIGN KEY (`country`) REFERENCES `countries` (`ccode`) ON DELETE NO ACTION ON UPDATE NO ACTION
-)
-
-CREATE TABLE `langs` (
-  `lid` varchar(5) NOT NULL,
-  `lfile` varchar(20) NOT NULL,
-  PRIMARY KEY (`lid`),
-  UNIQUE KEY `lid_UNIQUE` (`lid`),
-  UNIQUE KEY `file_UNIQUE` (`lfile`)
-)
-
-CREATE TABLE `styles` (
-  `sname` varchar(20) NOT NULL,
-  `sfile` varchar(20) NOT NULL,
-  PRIMARY KEY (`sname`),
-  UNIQUE KEY `file_UNIQUE` (`sfile`)
-)
-
-CREATE TABLE `styles` (
-  `sname` varchar(20) NOT NULL,
-  `sfile` varchar(20) NOT NULL,
-  PRIMARY KEY (`sname`),
-  UNIQUE KEY `file_UNIQUE` (`sfile`)
 )
 
 CREATE TABLE `conversations` (
@@ -75,3 +75,14 @@ CREATE TABLE `messages` (
   CONSTRAINT `messages_ibfk_1` FOREIGN KEY (`cid`) REFERENCES `conversations` (`cid`),
   CONSTRAINT `messages_ibfk_2` FOREIGN KEY (`uid`) REFERENCES `users` (`id`)
 )
+
+CREATE TABLE `sessions` (
+  `sessionid` int(11) NOT NULL AUTO_INCREMENT,
+  `stime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `user` int(11) NOT NULL,
+  `sactive` tinyint(1) NOT NULL DEFAULT '0',
+  `ip` varchar(11),
+  `token` varchar(32),
+  PRIMARY KEY (`sessionid`),
+  CONSTRAINT `sessions_ibfk_1` FOREIGN KEY (`user`) REFERENCES `users` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  )
